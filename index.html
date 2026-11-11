@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RPG Generator (KitoGerz) — генераторы персонажей для настольных ролевых игр.">
+  <title>RPG Generator — KitoGerz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" id="brand-home" aria-label="RPG Generator — главная">
+      <span class="brand-mark">KG</span>
+      <span><strong>RPG Generator</strong><small>KitoGerz</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Основная навигация">
+      <button class="nav-button is-active" data-page="home">Главная</button>
+      <button class="nav-button" data-page="warhammer">Warhammer</button>
+      <button class="nav-button" data-page="wip">В разработке</button>
+    </nav>
+  </header>
+
+  <main class="page-wrap">
+    <section class="view is-visible" id="view-home">
+      <h1>RPG Generator</h1>
+      <div class="universe-grid">
+        <button class="universe-card universe-featured" data-page="warhammer">
+          <span class="card-kicker">Доступно</span>
+          <span class="universe-title">Warhammer 40,000</span>
+          <span class="universe-description">Генератор персонажей</span>
+          <span class="card-action">Открыть →</span>
+        </button>
+        <button class="universe-card" data-page="wip">
+          <span class="card-kicker">Скоро</span>
+          <span class="universe-title">Другие вселенные</span>
+          <span class="universe-description">Раздел в разработке</span>
+          <span class="card-action">Подробнее →</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="view" id="view-warhammer">
+      <div class="view-heading">
+        <h1>Warhammer 40,000</h1>
+      </div>
+      <div class="section-tabs" role="tablist" aria-label="Разделы Warhammer">
+        <button class="section-tab is-active" data-section="characters" role="tab" aria-selected="true">Персонажи</button>
+        <button class="section-tab" data-section="gear" role="tab" aria-selected="false">Снаряжение</button>
+        <button class="section-tab" data-section="places" role="tab" aria-selected="false">Локации и прочее</button>
+      </div>
+      <section class="subview is-visible" id="section-characters">
+        <div class="panel intro-panel">
+          <div>
+            <h2>Генератор Астартес</h2>
+          </div>
+          <span class="status-pill">Прототип</span>
+        </div>
+        <div class="generator-layout">
+          <form class="panel controls-panel" id="generator-form">
+            <h3>Параметры генерации</h3>
+            <label for="tier-select">Уровень</label>
+            <select id="tier-select" name="tier"></select>
+            <label for="archetype-select">Архетип</label>
+            <select id="archetype-select" name="archetype"></select>
+            <label for="legion-select">Легион / варбанда</label>
+            <select id="legion-select" name="legion"></select>
+            <label for="belief-select">Верование</label>
+            <select id="belief-select" name="belief"></select>
+            <button class="primary-button" type="submit">Сгенерировать персонажа</button>
+          </form>
+          <section class="panel result-panel" aria-live="polite" aria-atomic="false">
+            <div id="empty-state" class="empty-state">
+              <div class="empty-icon">✦</div>
+              <h3>Персонаж появится здесь</h3>
+            </div>
+            <div id="character-result" hidden></div>
+          </section>
+        </div>
+      </section>
+      <section class="subview" id="section-gear">
+        <div class="panel coming-soon"><h2>Снаряжение</h2><p class="muted">Раздел в разработке</p></div>
+      </section>
+      <section class="subview" id="section-places">
+        <div class="panel coming-soon"><h2>Локации и прочее</h2><p class="muted">Раздел в разработке</p></div>
+      </section>
+    </section>
+
+    <section class="view" id="view-wip">
+      <h1>В разработке</h1>
+      <div class="roadmap-grid">
+        <article class="panel roadmap-item"><h3>Другие персонажи</h3><p class="muted">Раздел в разработке</p></article>
+        <article class="panel roadmap-item"><h3>Снаряжение</h3><p class="muted">Раздел в разработке</p></article>
+        <article class="panel roadmap-item"><h3>Локации и прочее</h3><p class="muted">Раздел в разработке</p></article>
+      </div>
+    </section>
+    <footer class="site-footer"><span>RPG Generator <span class="footer-dot">·</span> KitoGerz</span></footer>
+  </main>
+</body>
+</html>
